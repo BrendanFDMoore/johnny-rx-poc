@@ -1,43 +1,11 @@
-React-Redux-Observables Boilerplate
-===
+This project is an initial proof of concept for getting redux actions created in response to real world button press events connected to an Arduino board.
 
-[![Build Status](https://travis-ci.org/gilbarbara/react-redux-observables-boilerplate.svg?branch=master)](https://travis-ci.org/gilbarbara/react-redux-observables-boilerplate) 
-[![Code Climate](https://codeclimate.com/github/gilbarbara/react-redux-observables-boilerplate/badges/gpa.svg)](https://codeclimate.com/github/gilbarbara/react-redux-observables-boilerplate) [![Test Coverage](https://codeclimate.com/github/gilbarbara/react-redux-observables-boilerplate/badges/coverage.svg)](https://codeclimate.com/github/gilbarbara/react-redux-observables-boilerplate/coverage) [![Dependencies](https://david-dm.org/gilbarbara/react-redux-observables-boilerplate.svg)](https://david-dm.org/gilbarbara/react-redux-observables-boilerplate)
+In order to avoid some of the challenges associated with Johnny-Five and serial port access, I wanted to try running it in isolation directly with node, and connect it to the web app indriectly via a websocket.
 
-[Demo](http://gilbarbara.github.io/react-redux-observables-boilerplate)
+Running `yarn start` uses `concurrently` to run three commands in parallel for starting the main web app via wepback dev server, a simple express server to manage the websocket connections and the johnny-five scripts that monitor board events and transmit via the socket.
 
-### Provides
-- react ^15.x
-- react-router ^4.x
-- redux ^3.x
-- redux-observable ^0.14
-- rxjs ^5.x
+Events from the Arduino board are reported by Johnny Five using a segmented string: `component:pin:event`. For example, pressing a button connected to pin number 2 would produce `button:2:press` (and then `button:2:release` after it is released). After transmission via the socket, there in an `epic` which will `dispatch` these board events as _actions_ to the redux store. Another `epic` listens for these actions and filters them to just `button` components and dispatches press/release actions as appropriate (including the pin number).
 
-### Building
-- webpack ^2.x
+Currently, the state is not actually being recorded in the store by any reducer. I merely wanted to get the actions going as a first step.
 
-`npm run build`
-
-### Development
-- webpack-dev-server ^2.x
-- react-hot-loader ^3.0-beta
-
-`npm start`
-
-### Tests
-- jest ^20.x
-- enzyme ^2.x
-
-`npm test`  
-`npm run test:watch`
-
-### Browser Automation
-- nightwatch ^0.9
-- selenium ^3.4
-
-`npm run test:ui` (with dev-server already running)  
-`npm run test:ui:start` (start dev-server, run tests and exit) 
-
-### Requirements
-- node `^7.x`
-- npm `^4.x`
+Built off of [React-Redux-Observables Boilerplate](https://github.com/gilbarbara/react-redux-observables-boilerplate)

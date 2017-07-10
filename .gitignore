@@ -1,6 +1,7 @@
 .tmp
 .sass-cache
 .publish
+.DS_Store
 coverage/
 dist/
 documentation/

@@ -16,6 +16,8 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import SystemNotifications from 'components/SystemNotifications';
 
+import { initializeJohnnyFive } from 'actions';
+
 export class App extends React.Component {
   static propTypes = {
     app: PropTypes.object.isRequired,
@@ -23,6 +25,14 @@ export class App extends React.Component {
     router: PropTypes.object.isRequired,
     user: PropTypes.object.isRequired,
   };
+
+  componentWillMount() {
+    const { dispatch } = this.props;
+
+    // On App mount, send the signal to
+    // start listening to Johnny Five events on the socket
+    dispatch(initializeJohnnyFive());
+  }
 
   render() {
     const { app, dispatch, router, user } = this.props;

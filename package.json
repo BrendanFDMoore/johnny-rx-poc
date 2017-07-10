@@ -25,11 +25,14 @@
     "bootstrap": "^4.0.0-alpha",
     "classlist-polyfill": "^1.2",
     "classnames": "^2.2",
+    "concurrently": "^3.5.0",
     "core-decorators": "^0.19",
     "core-js": "^2.4",
     "ease-component": "^1.0",
+    "express": "^4.15.3",
     "fbjs": "^0.8",
     "history": "^4.6",
+    "johnny-five": "^0.11.3",
     "lodash": "^4.17",
     "mobile-detect": "^1.3",
     "modernizr": "^3.5",
@@ -48,7 +51,9 @@
     "rxjs": "^5.4",
     "sass-mediaqueries": "^1.6",
     "scroll": "^2.0",
-    "scroll-doc": "^0.1"
+    "scroll-doc": "^0.1",
+    "socket.io": "^2.0.3",
+    "socket.io-client": "^2.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^7.1",
@@ -132,7 +137,10 @@
     "xhr-mock": "^1.9"
   },
   "scripts": {
-    "start": "node config/webpack.server.js",
+    "start": "concurrently --kill-others \"yarn start:socketserver\" \"yarn start:app\" \"yarn start:johnnyfive\"",
+    "start:app": "node config/webpack.server.js",
+    "start:johnnyfive": "node johnny-five/start.js",
+    "start:socketserver": "node server/start.js",
     "build": "NODE_ENV=production webpack --config config/webpack.prod.js",
     "analyze": "NODE_ENV=production webpack --config config/webpack.prod.js --profile --json > webpack.stats.json",
     "lint": "eslint  --ext .js --ext .jsx app/scripts config test",
@@ -144,7 +152,7 @@
     "deploy": "node config/tools deploy",
     "publish": "node config/tools publish",
     "docs": "node config/tools docs",
-    "precommit": "node config/tools commits && npm run lint && npm run lint:styles && npm test",
+    "precommit": "node config/tools commits && npm run lint && npm run lint:styles",
     "postmerge": "node config/tools update && npm update"
   },
   "browserslist": [
