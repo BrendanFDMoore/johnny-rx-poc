@@ -64,3 +64,19 @@ export function buttonRelease(pin: number) {
     },
   };
 }
+
+/**
+ * buttonHold
+ *
+ * @param {number} pin
+ *
+ * @returns {Object}
+ */
+export function buttonHold(pin: number) {
+  return {
+    type: ActionTypes.JOHNNY_FIVE_BUTTON_HOLD,
+    payload: {
+      pin,
+    },
+  };
+}

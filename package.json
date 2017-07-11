@@ -140,7 +140,7 @@
     "start": "concurrently --kill-others \"yarn start:socketserver\" \"yarn start:app\" \"yarn start:johnnyfive\"",
     "start:app": "node config/webpack.server.js",
     "start:johnnyfive": "node johnny-five/start.js",
-    "start:socketserver": "node server/start.js",
+    "start:socketserver": "node socket/start.js",
     "build": "NODE_ENV=production webpack --config config/webpack.prod.js",
     "analyze": "NODE_ENV=production webpack --config config/webpack.prod.js --profile --json > webpack.stats.json",
     "lint": "eslint  --ext .js --ext .jsx app/scripts config test",
