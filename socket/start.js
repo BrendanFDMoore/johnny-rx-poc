@@ -1,8 +1,9 @@
 const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
+const config = require('./config');
 
-const logger = (msg) => console.log('Server says:', msg);
+const logger = (msg) => console.log('Socket server says:', msg);
 
 io.on('connection', (socket) => {
   logger('a user connected!');
@@ -21,6 +22,6 @@ io.on('connection', (socket) => {
   });
 });
 
-http.listen(4444, () => {
+http.listen(config.PORT, () => {
   logger('listening on *:4444');
 });

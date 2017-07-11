@@ -7,13 +7,16 @@ import Rx from 'rxjs';
 import io from 'socket.io-client';
 
 import { ActionTypes } from 'constants/index';
-import { boardEvent, buttonPress, buttonRelease } from 'actions';
+import { boardEvent, buttonPress, buttonRelease, buttonHold } from 'actions';
+
+const socketconfig = require('../../../socket/config');
 
 export function johnnyFiveListener(action$) {
   return action$.ofType(ActionTypes.JOHNNY_FIVE_INITIALIZE)
+    .first()
     .flatMap(() => {
       const johnnyFiveEventStream = new Rx.Subject();
-      const socket = io('http://localhost:4444');
+      const socket = io(socketconfig.ADDRESS);
       socket.on('johnny event', (event) => {
         johnnyFiveEventStream.next(boardEvent(event));
       });
@@ -37,9 +40,15 @@ const transformBoardEventStringToObject = (eventString: string) => {
   };
 };
 
+const buttonEventActionMap = {
+  press: buttonPress,
+  release: buttonRelease,
+  hold: buttonHold,
+};
+
 export function buttonEvents(action$) {
   return action$.ofType(ActionTypes.JOHNNY_FIVE_BOARD_EVENT)
     .map(e => transformBoardEventStringToObject(e.payload.eventType))
-    .filter(e => e.component === 'button' && ['press', 'release'].includes(e.event))
-    .map(e => (e.event === 'press' ? buttonPress(e.pin) : buttonRelease(e.pin)));
+    .filter(e => e.component === 'button' && Object.keys(buttonEventActionMap).includes(e.event))
+    .map(e => (buttonEventActionMap[e.event](e.pin)));
 }

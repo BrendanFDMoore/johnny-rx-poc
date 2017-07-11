@@ -28,6 +28,7 @@ export const ActionTypes: Object = keyMirror({
   JOHNNY_FIVE_BOARD_EVENT: undefined,
   JOHNNY_FIVE_BUTTON_PRESS: undefined,
   JOHNNY_FIVE_BUTTON_RELEASE: undefined,
+  JOHNNY_FIVE_BUTTON_HOLD: undefined,
 });
 
 /**
