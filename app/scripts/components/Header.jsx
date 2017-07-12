@@ -43,6 +43,15 @@ const Header = ({ dispatch, user }) =>
           </NavLink>
         </li>
         <li>
+          <NavLink
+            to="/johnny"
+            className="app__header__link"
+            activeClassName="is-active"
+          >
+            Johnny
+          </NavLink>
+        </li>
+        <li>
           {user.isAuthenticated ?
            (<a
              href="#logout"

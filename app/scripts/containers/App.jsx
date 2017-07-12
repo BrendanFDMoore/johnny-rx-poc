@@ -9,6 +9,7 @@ import RedirectProtected from 'modules/RedirectProtected';
 import Home from 'containers/Home';
 import Private from 'containers/Private';
 import Login from 'containers/Login';
+import Johnny from 'containers/Johnny';
 import NotFound from 'containers/NotFound';
 
 import Loader from 'components/Loader';
@@ -56,6 +57,12 @@ export class App extends React.Component {
                   component={Private}
                   isAuthenticated={user.isAuthenticated}
                   path="/private"
+                  exact
+                />
+                <RedirectPublic
+                  component={Johnny}
+                  isAuthenticated={user.isAuthenticated}
+                  path="/johnny"
                   exact
                 />
                 <Route component={NotFound} />
