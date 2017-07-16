@@ -29,6 +29,10 @@ export const ActionTypes: Object = keyMirror({
   JOHNNY_FIVE_BUTTON_PRESS: undefined,
   JOHNNY_FIVE_BUTTON_RELEASE: undefined,
   JOHNNY_FIVE_BUTTON_HOLD: undefined,
+  JOHNNY_FIVE_LED_ON: undefined,
+  JOHNNY_FIVE_LED_OFF: undefined,
+  JOHNNY_FIVE_LED_BLINK: undefined,
+  JOHNNY_FIVE_LED_PULSE: undefined,
 });
 
 /**
@@ -44,3 +48,12 @@ export const XHR: Object = keyMirror({
  * @constant {string} LOCATION_CHANGE
  */
 export const LOCATION_CHANGE: string = '@@router/LOCATION_CHANGE';
+
+/**
+ * @constant {Object} JohnnyFiveComponentTypes
+ * @memberof Constants
+ */
+export const JohnnyFiveComponentTypes: Object = keyMirror({
+  button: undefined,
+  led: undefined,
+});

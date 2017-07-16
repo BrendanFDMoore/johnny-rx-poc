@@ -38,8 +38,16 @@ const buttons = [
   },
 ];
 
-// LEDs not yet supported
-const leds = [];
+const leds = [
+  {
+    init: { pin: 11 },
+    commands: ['on', 'off', 'blink', 'pulse'],
+  },
+  {
+    init: { pin: 13 },
+    commands: ['on', 'off', 'blink'],
+  },
+];
 
 const config = {
   buttons,
