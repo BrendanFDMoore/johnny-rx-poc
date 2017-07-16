@@ -80,3 +80,71 @@ export function buttonHold(pin: number) {
     },
   };
 }
+
+/**
+ * ledOn
+ *
+ * @param {number} pin
+ *
+ * @returns {Object}
+ */
+export function ledOn(pin: number) {
+  return {
+    type: ActionTypes.JOHNNY_FIVE_LED_ON,
+    payload: {
+      pin,
+    },
+  };
+}
+
+/**
+ * ledOff
+ *
+ * @param {number} pin
+ *
+ * @returns {Object}
+ */
+export function ledOff(pin: number) {
+  return {
+    type: ActionTypes.JOHNNY_FIVE_LED_OFF,
+    payload: {
+      pin,
+    },
+  };
+}
+
+/**
+ * ledBlink
+ *
+ * @param {number} pin
+ * @param {number?} duration
+ *
+ * @returns {Object}
+ */
+export function ledBlink(pin: number, duration: number = 500) {
+  return {
+    type: ActionTypes.JOHNNY_FIVE_LED_BLINK,
+    payload: {
+      pin,
+      duration,
+    },
+  };
+}
+
+/**
+ * ledPulse
+ *
+ * @param {number} pin
+ * @param {number?} duration
+ *
+ * @returns {Object}
+ */
+export function ledPulse(pin: number, duration: number = 500) {
+  return {
+    type: ActionTypes.JOHNNY_FIVE_LED_PULSE,
+    payload: {
+      pin,
+      duration,
+    },
+  };
+}
