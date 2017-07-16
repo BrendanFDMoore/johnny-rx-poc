@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Gamepad = () => (
-  <div className="controllerWrapper">
+  <div className="controller-wrapper">
     <div className="controller">
       <div className="inset-area">
         <div className="nintendo-text"> Nintendo </div>

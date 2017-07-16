@@ -2,30 +2,29 @@
 
 $red: #c00;
 
-// @import url('https://fonts.googleapis.com/css?family=Prosto+One');
+@import url('https://fonts.googleapis.com/css?family=Prosto+One');
 
 @font-face {
   font-family: 'Pretendo';
-  src: url('http://remleyinvitational.com/fonts/pretendo-webfont.eot');
-  src:
-    /* Modern Browsers */
-    url('http://remleyinvitational.com/fonts/pretendo-webfont.woff') format('woff'),
-    /* Safari, Android, iOS */
-    url('http://remleyinvitational.com/fonts/pretendo-webfont.ttf')  format('truetype'),
-    /* Legacy iOS */
-    url('http://remleyinvitational.com/fonts/pretendo-webfont.svg#svgPretendo') format('svg');
+  font-style: normal;
+  font-weight: normal;
+  src: url('#{$font-path}Pretendo.eot');
+  src: url('#{$font-path}Pretendo.woff') format('woff'),
+  url('#{$font-path}Pretendo.ttf')  format('truetype'),
+  url('#{$font-path}Pretendo.svg#svgPretendo') format('svg');
 }
 
-// body {
-//   background: url('https://subtlepatterns.com/patterns/irongrip.png');
-//   font-family: 'Prosto One';
-// }
+.controller-wrapper {
+  font-family: 'Prosto One', sans-serif;
+  position: absolute;
+}
 
 .controller {
   background-color: #ccc;
   border-radius: 5px;
   height: 250px;
-  position: absolute;
+  margin-left: 8px;
+  margin-top: 10px;
   width: 600px;
 }
 
@@ -52,7 +51,7 @@ $red: #c00;
   height: 175px;
   left: 165px;
   position: relative;
-  top: -27px;
+  top: -36px;
   width: 180px;
 
   .stripe {
@@ -102,7 +101,7 @@ $red: #c00;
   height: 0;
   left: 12px;
   position: absolute;
-  top: 258px;
+  top: 259px;
   width: 0;
 }
 
@@ -112,14 +111,14 @@ $red: #c00;
   height: 12px;
   left: 12px;
   position: absolute;
-  top: 258px;
-  width: 570px;
+  top: 259px;
+  width: 598px;
 }
 
 .right {
   border-left: 15px solid #aaa;
   border-top: 20px solid transparent;
-  height: 225px;
+  height: 249px;
   left: 608px;
   position: absolute;
   top: 13px;
@@ -132,7 +131,7 @@ $red: #c00;
   height: 0;
   left: 602px;
   position: absolute;
-  top: 253px;
+  top: 254px;
   width: 0;
   z-index: -1;
 }
@@ -141,9 +140,9 @@ $red: #c00;
   background-color: #aaa;
   border-radius: 50%;
   height: 30px;
-  left: 602px;
+  left: 603px;
   position: absolute;
-  top: 243px;
+  top: 244px;
   width: 20px;
   z-index: -1;
 }
@@ -161,10 +160,17 @@ $red: #c00;
     border-radius: 50%;
     border-right: 4px solid #600;
     cursor: pointer;
-    height: 42px;
+    height: 46px;
     margin-left: 2px;
     margin-top: 2px;
-    width: 42px;
+    width: 46px;
+
+    &:active {
+      border-bottom: 1px solid #600;
+      border-right: 1px solid #600;
+      height: 44px;
+      width: 44px;
+    }
 
     &:before {
       background-color: $red;
@@ -175,11 +181,11 @@ $red: #c00;
       border-top: 2px solid #800;
       content: '';
       display: block;
-      height: 34px;
+      height: 38px;
       left: 4px;
       position: absolute;
       top: 4px;
-      width: 34px;
+      width: 38px;
     }
   }
 }
@@ -200,8 +206,8 @@ $red: #c00;
   .a-button {
     &:active {
       border: 0;
-      margin-left: 6px;
-      margin-top: 6px;
+      margin-left: 4px;
+      margin-top: 4px;
 
       &:before {
         background-color: $red;
@@ -212,11 +218,11 @@ $red: #c00;
         border-top: 2px solid #800;
         content: '';
         display: block;
-        height: 34px;
+        height: 38px;
         left: 6px;
         position: absolute;
         top: 6px;
-        width: 34px;
+        width: 38px;
       }
     }
   }
@@ -238,8 +244,8 @@ $red: #c00;
   .b-button {
     &:active {
       border: 0;
-      margin-left: 6px;
-      margin-top: 6px;
+      margin-left: 4px;
+      margin-top: 4px;
 
       &:before {
         background-color: $red;
@@ -250,11 +256,11 @@ $red: #c00;
         border-top: 2px solid #800;
         content: '';
         display: block;
-        height: 34px;
+        height: 38px;
         left: 6px;
         position: absolute;
         top: 6px;
-        width: 34px;
+        width: 38px;
       }
     }
   }
@@ -265,10 +271,10 @@ $red: #c00;
   border: 5px inset #fff;
   border-radius: 5px;
   height: 45px;
-  left: 198px;
+  left: 193px;
   position: absolute;
-  top: 155px;
-  width: 170px;
+  top: 150px;
+  width: 175px;
 
   .middle-button {
     background-color: #202020;
@@ -283,53 +289,53 @@ $red: #c00;
 
   .select {
     left: 25px;
-    top: 15px;
+    top: 7px;
 
     &:before {
       color: $red;
       content: 'SELECT';
       left: -5px;
       position: absolute;
-      top: -50px;
+      top: -46px;
     }
 
     &:active {
       box-shadow: 0 0 #000;
       left: 27px;
-      top: 17px;
+      top: 10px;
 
       &:before {
         color: $red;
         content: 'SELECT';
         left: -7px;
         position: absolute;
-        top: -52px;
+        top: -49px;
       }
     }
   }
 
   .start {
     left: 95px;
-    top: 15px;
+    top: 7px;
 
     &:before {
       color: $red;
       content: 'START';
       position: absolute;
-      top: -50px;
+      top: -46px;
     }
 
     &:active {
       box-shadow: 0 0 #000;
       left: 97px;
-      top: 17px;
+      top: 10px;
 
       &:before {
         color: $red;
         content: 'START';
         left: -2px;
         position: absolute;
-        top: -52px;
+        top: -49px;
       }
     }
   }
