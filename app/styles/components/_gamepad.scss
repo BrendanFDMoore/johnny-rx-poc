@@ -16,7 +16,8 @@ $red: #c00;
 
 .controller-wrapper {
   font-family: 'Prosto One', sans-serif;
-  position: absolute;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 .controller {
@@ -25,6 +26,7 @@ $red: #c00;
   height: 250px;
   margin-left: 8px;
   margin-top: 10px;
+  position: relative;
   width: 600px;
 }
 
@@ -89,9 +91,9 @@ $red: #c00;
   border-left: 15px solid #aaa;
   border-top: 20px solid transparent;
   height: 0;
-  left: 608px;
+  left: 600px;
   position: absolute;
-  top: 13px;
+  top: 3px;
   width: 0;
 }
 
@@ -99,9 +101,9 @@ $red: #c00;
   border-left: 20px solid transparent;
   border-top: 15px solid #aaa;
   height: 0;
-  left: 12px;
+  left: 4px;
   position: absolute;
-  top: 259px;
+  top: 249px;
   width: 0;
 }
 
@@ -109,9 +111,9 @@ $red: #c00;
   border-left: 20px solid transparent;
   border-top: 15px solid #aaa;
   height: 12px;
-  left: 12px;
+  left: 3px;
   position: absolute;
-  top: 259px;
+  top: 249px;
   width: 598px;
 }
 
@@ -119,9 +121,9 @@ $red: #c00;
   border-left: 15px solid #aaa;
   border-top: 20px solid transparent;
   height: 249px;
-  left: 608px;
+  left: 600px;
   position: absolute;
-  top: 13px;
+  top: 3px;
   width: 12px;
 }
 
@@ -129,9 +131,9 @@ $red: #c00;
   border-left: 15px solid #aaa;
   border-top: 20px solid transparent;
   height: 0;
-  left: 602px;
+  left: 594px;
   position: absolute;
-  top: 254px;
+  top: 244px;
   width: 0;
   z-index: -1;
 }
@@ -140,9 +142,9 @@ $red: #c00;
   background-color: #aaa;
   border-radius: 50%;
   height: 30px;
-  left: 603px;
+  left: 595px;
   position: absolute;
-  top: 244px;
+  top: 234px;
   width: 20px;
   z-index: -1;
 }
@@ -165,7 +167,8 @@ $red: #c00;
     margin-top: 2px;
     width: 46px;
 
-    &:active {
+    &:active,
+    &.button-is-pressed {
       border-bottom: 1px solid #600;
       border-right: 1px solid #600;
       height: 44px;
@@ -204,7 +207,8 @@ $red: #c00;
   }
 
   .a-button {
-    &:active {
+    &:active,
+    &.button-is-pressed {
       border: 0;
       margin-left: 4px;
       margin-top: 4px;
@@ -242,7 +246,8 @@ $red: #c00;
   }
 
   .b-button {
-    &:active {
+    &:active,
+    &.button-is-pressed {
       border: 0;
       margin-left: 4px;
       margin-top: 4px;
@@ -287,7 +292,7 @@ $red: #c00;
     width: 50px;
   }
 
-  .select {
+  .select-button {
     left: 25px;
     top: 7px;
 
@@ -299,7 +304,8 @@ $red: #c00;
       top: -46px;
     }
 
-    &:active {
+    &:active,
+    &.button-is-pressed {
       box-shadow: 0 0 #000;
       left: 27px;
       top: 10px;
@@ -314,7 +320,7 @@ $red: #c00;
     }
   }
 
-  .start {
+  .start-button {
     left: 95px;
     top: 7px;
 
@@ -325,7 +331,8 @@ $red: #c00;
       top: -46px;
     }
 
-    &:active {
+    &:active,
+    &.button-is-pressed {
       box-shadow: 0 0 #000;
       left: 97px;
       top: 10px;
@@ -366,7 +373,8 @@ $red: #c00;
     left: 33px;
     transform: rotate(180deg);
 
-    &:active {
+    &:active,
+    &.button-is-pressed {
       box-shadow: -1px 0 0 #888;
       transform: rotate(180deg) rotate3d(1, 0, 0, 30deg);
     }
@@ -377,7 +385,8 @@ $red: #c00;
     top: 33px;
     transform: rotate(90deg);
 
-    &:active {
+    &:active,
+    &.button-is-pressed {
       box-shadow: 1px 0 0 #888;
       transform: rotate(90deg) rotate3d(1, 0, 0, 20deg);
     }
@@ -389,7 +398,8 @@ $red: #c00;
     top: 33px;
     transform: rotate(270deg);
 
-    &:active {
+    &:active,
+    &.button-is-pressed {
       box-shadow: -1px 1px 0 #888;
       transform: rotate(270deg) rotate3d(1, 0, 0, 20deg);
     }
@@ -400,7 +410,8 @@ $red: #c00;
     left: 33px;
     top: 66px;
 
-    &:active {
+    &:active,
+    &.button-is-pressed {
       box-shadow: 1px 0 0 #888;
       transform: rotate3d(1, 0, 0, 30deg);
     }

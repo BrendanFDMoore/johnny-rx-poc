@@ -15,6 +15,7 @@ module.name_mapper='^constants\/index$' -> '<PROJECT_ROOT>/app/scripts/constants
 module.name_mapper='^containers\/\(.*\)$' -> '<PROJECT_ROOT>/app/scripts/containers/\1'
 module.name_mapper='^epics\/\(.*\)$' -> '<PROJECT_ROOT>/app/scripts/epics/\1'
 module.name_mapper='^reducers\/\(.*\)$' -> '<PROJECT_ROOT>/app/scripts/reducers/\1'
+module.name_mapper='^selectors\/\(.*\)$' -> '<PROJECT_ROOT>/app/scripts/selectors/\1'
 module.name_mapper='^utils\/\(.*\)$' -> '<PROJECT_ROOT>/app/scripts/utils/\1'
 
 munge_underscores=true

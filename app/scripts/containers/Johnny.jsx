@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import Gamepad from 'components/Gamepad';
+import gamepadStoreConnector from 'selectors/gamepad';
 
 import { ledOn, ledOff, ledBlink, ledPulse } from 'actions';
 
 export class Private extends React.PureComponent {
   static propTypes = {
+    gamepad: PropTypes.object,
     johnny: PropTypes.object.isRequired,
     ledBlinkHandler: PropTypes.func.isRequired,
     ledOffHandler: PropTypes.func.isRequired,
@@ -16,23 +18,17 @@ export class Private extends React.PureComponent {
   };
 
   render() {
-    const { johnny: { buttons } } = this.props;
+    const { johnny: { buttons }, gamepad } = this.props;
     const { ledOnHandler, ledOffHandler, ledBlinkHandler, ledPulseHandler } = this.props;
 
     return (
       <div key="Johnny" className="app__johnny app__route">
         <div className="app__container">
-          <h2>Debug Johnny State</h2>
+          <h2>Controller</h2>
           <div>
-            {
-              Object.keys(buttons).map((pin) => (
-                <div key={pin}>
-                  {`{ pin: ${pin}, press: ${buttons[pin].press}, hold: ${buttons[pin].hold}, holdCount: ${buttons[pin].holdCount}}`}
-                </div>
-              ))
-            }
+            <Gamepad buttons={gamepad} />
           </div>
-          <h2>Johnny Debug Commands</h2>
+          <h2>Johnny LED Commands</h2>
           <div>
             <div>
               <span>LED 1 (Pin 11):</span>
@@ -97,9 +93,15 @@ export class Private extends React.PureComponent {
               </a>
             </div>
           </div>
-          <h2>Controller</h2>
-          <div>
-             <Gamepad />
+          <h2> Johnny State Debug</h2>
+          <div style={{ fontSize: 'smaller' }}>
+            {
+              Object.keys(buttons).map((pin) => (
+                <div key={pin}>
+                  {`{ pin: ${pin}, press: ${buttons[pin].press}, hold: ${buttons[pin].hold}, holdCount: ${buttons[pin].holdCount}}`}
+                </div>
+              ))
+            }
           </div>
         </div>
       </div>
@@ -109,7 +111,10 @@ export class Private extends React.PureComponent {
 
 /* istanbul ignore next */
 function mapStateToProps(state) {
-  return { johnny: state.johnny };
+  return {
+    gamepad: gamepadStoreConnector(state),
+    johnny: state.johnny,
+  };
 }
 /* istanbul ignore next */
 function mapDispatchToProps(dispatch) {
