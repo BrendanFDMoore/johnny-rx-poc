@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import Gamepad from 'components/Gamepad';
+
 import { ledOn, ledOff, ledBlink, ledPulse } from 'actions';
 
 export class Private extends React.PureComponent {
@@ -94,6 +96,10 @@ export class Private extends React.PureComponent {
                 <span>Blink</span>
               </a>
             </div>
+          </div>
+          <h2>Controller</h2>
+          <div>
+             <Gamepad />
           </div>
         </div>
       </div>
