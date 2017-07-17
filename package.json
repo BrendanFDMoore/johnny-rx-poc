@@ -1,14 +1,14 @@
 {
-  "name": "react-redux-observables-boilerplate",
-  "title": "React-Redux-Observables Boilerplate",
-  "description": "Yet another starter kit for React with Router, Redux, Observable + RxJS",
-  "version": "0.5.0",
-  "author": "Gil Barbara <gilbarbara@gmail.com>",
+  "name": "johnny-rx-poc",
+  "title": "Johnny-Five Redux Proof of Concept",
+  "description": "Creating and responding to redux action with a Johnny-Five controlled Arduino board.",
+  "version": "0.1.0",
+  "author": "Brendan Moore <brendan.m.dev@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gilbarbara/react-redux-observables-boilerplate"
+    "url": "https://github.com/brendanfdmoore/johnny-rx-poc"
   },
-  "bugs": "https://github.com/gilbarbara/react-redux-observables-boilerplate/issues",
+  "bugs": "https://github.com/brendanfdmoore/johnny-rx-poc/issues",
   "license": "MIT",
   "keywords": [
     "React",
@@ -18,6 +18,8 @@
     "RxJS",
     "ReactiveX",
     "Webpack",
+    "Arduino",
+    "Johnny-Five",
     "ES6",
     "ES2016"
   ],
@@ -49,6 +51,7 @@
     "redux-observable": "^0.14",
     "redux-persist": "^4.8",
     "redux-thunk": "^2.2",
+    "reselect": "^3.0.1",
     "rxjs": "^5.4",
     "sass-mediaqueries": "^1.6",
     "scroll": "^2.0",

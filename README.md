@@ -83,5 +83,6 @@ The `leds` config array uses similar structure, except that `isPullup` is not re
 
 ## Thanks/Credits
 
-* Inspiration for this project came from attending JP Côté's session at FITC WebUnleashed in 2016. See his examples [on github](https://github.com/cotejp/fitc2016-workshop).
-* Web app built on top of the [React-Redux-Observables Boilerplate](https://github.com/gilbarbara/react-redux-observables-boilerplate).
+* Inspiration for this project came from attending [JP Côté](https://github.com/cotejp)'s session at FITC WebUnleashed in 2016. See his examples [on github](https://github.com/cotejp/fitc2016-workshop).
+* Web app built on top of the [React-Redux-Observables Boilerplate](https://github.com/gilbarbara/react-redux-observables-boilerplate) by [Gil Barbara](https://github.com/gilbarbara).
+* NES Controller gamepad implemented as React component based on [this codepen](https://codepen.io/epzilla/pen/cKjvB) by [Adam Epling](https://github.com/epzilla).

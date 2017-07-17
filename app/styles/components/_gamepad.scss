@@ -1,0 +1,440 @@
+// @import 'compass/css3';
+
+$red: #c00;
+
+@import url('https://fonts.googleapis.com/css?family=Prosto+One');
+
+@font-face {
+  font-family: 'Pretendo';
+  font-style: normal;
+  font-weight: normal;
+  src: url('#{$font-path}Pretendo.eot');
+  src: url('#{$font-path}Pretendo.woff') format('woff'),
+  url('#{$font-path}Pretendo.ttf')  format('truetype'),
+  url('#{$font-path}Pretendo.svg#svgPretendo') format('svg');
+}
+
+.controller-wrapper {
+  font-family: 'Prosto One', sans-serif;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.controller {
+  background-color: #ccc;
+  border-radius: 5px;
+  height: 250px;
+  margin-left: 8px;
+  margin-top: 10px;
+  position: relative;
+  width: 600px;
+}
+
+.inset-area {
+  background-color: #202020;
+  border-radius: 5px;
+  height: 175px;
+  left: 25px;
+  position: absolute;
+  top: 50px;
+  width: 550px;
+}
+
+.nintendo-text {
+  color: $red;
+  font-family: 'Pretendo', 'Prosto One', sans-serif;
+  font-size: 24px;
+  left: 383px;
+  position: relative;
+  top: 40px;
+}
+
+.mid-stripe {
+  height: 175px;
+  left: 165px;
+  position: relative;
+  top: -36px;
+  width: 180px;
+
+  .stripe {
+    background-color: #777;
+    width: 100%;
+  }
+
+  .stripe1 {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 25px;
+  }
+
+  .stripe2 {
+    border-radius: 5px;
+    height: 25px;
+    margin-top: 7px;
+  }
+
+  .stripe3 {
+    border-radius: 5px;
+    height: 25px;
+    margin-top: 7px;
+  }
+
+  .stripe4 {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 15px;
+    margin-top: 71px;
+  }
+}
+
+.fill-tri-top {
+  border-left: 15px solid #aaa;
+  border-top: 20px solid transparent;
+  height: 0;
+  left: 600px;
+  position: absolute;
+  top: 3px;
+  width: 0;
+}
+
+.fill-tri-bottom {
+  border-left: 20px solid transparent;
+  border-top: 15px solid #aaa;
+  height: 0;
+  left: 4px;
+  position: absolute;
+  top: 249px;
+  width: 0;
+}
+
+.bottom {
+  border-left: 20px solid transparent;
+  border-top: 15px solid #aaa;
+  height: 12px;
+  left: 3px;
+  position: absolute;
+  top: 249px;
+  width: 598px;
+}
+
+.right {
+  border-left: 15px solid #aaa;
+  border-top: 20px solid transparent;
+  height: 249px;
+  left: 600px;
+  position: absolute;
+  top: 3px;
+  width: 12px;
+}
+
+.fill-tri-bottom-right {
+  border-left: 15px solid #aaa;
+  border-top: 20px solid transparent;
+  height: 0;
+  left: 594px;
+  position: absolute;
+  top: 244px;
+  width: 0;
+  z-index: -1;
+}
+
+.fill-circle {
+  background-color: #aaa;
+  border-radius: 50%;
+  height: 30px;
+  left: 595px;
+  position: absolute;
+  top: 234px;
+  width: 20px;
+  z-index: -1;
+}
+
+.button-box {
+  background-color: #eee;
+  border-radius: 5px;
+  height: 50px;
+  position: absolute;
+  width: 50px;
+
+  .red-button {
+    background-color: $red;
+    border-bottom: 4px solid #600;
+    border-radius: 50%;
+    border-right: 4px solid #600;
+    cursor: pointer;
+    height: 46px;
+    margin-left: 2px;
+    margin-top: 2px;
+    width: 46px;
+
+    &:active,
+    &.button-is-pressed {
+      border-bottom: 1px solid #600;
+      border-right: 1px solid #600;
+      height: 44px;
+      width: 44px;
+    }
+
+    &:before {
+      background-color: $red;
+      border-bottom: 2px solid #ccc;
+      border-left: 2px solid #800;
+      border-radius: 50%;
+      border-right: 2px solid #ccc;
+      border-top: 2px solid #800;
+      content: '';
+      display: block;
+      height: 38px;
+      left: 4px;
+      position: absolute;
+      top: 4px;
+      width: 38px;
+    }
+  }
+}
+
+.a-box {
+  left: 450px;
+  top: 100px;
+
+  &:after {
+    color: $red;
+    content: 'A';
+    font-weight: bolder;
+    position: absolute;
+    right: 0;
+    top: 53px;
+  }
+
+  .a-button {
+    &:active,
+    &.button-is-pressed {
+      border: 0;
+      margin-left: 4px;
+      margin-top: 4px;
+
+      &:before {
+        background-color: $red;
+        border-bottom: 2px solid #ccc;
+        border-left: 2px solid #800;
+        border-radius: 50%;
+        border-right: 2px solid #ccc;
+        border-top: 2px solid #800;
+        content: '';
+        display: block;
+        height: 38px;
+        left: 6px;
+        position: absolute;
+        top: 6px;
+        width: 38px;
+      }
+    }
+  }
+}
+
+.b-box {
+  left: 390px;
+  top: 100px;
+
+  &:after {
+    color: $red;
+    content: 'B';
+    font-weight: bolder;
+    position: absolute;
+    right: 0;
+    top: 53px;
+  }
+
+  .b-button {
+    &:active,
+    &.button-is-pressed {
+      border: 0;
+      margin-left: 4px;
+      margin-top: 4px;
+
+      &:before {
+        background-color: $red;
+        border-bottom: 2px solid #ccc;
+        border-left: 2px solid #800;
+        border-radius: 50%;
+        border-right: 2px solid #ccc;
+        border-top: 2px solid #800;
+        content: '';
+        display: block;
+        height: 38px;
+        left: 6px;
+        position: absolute;
+        top: 6px;
+        width: 38px;
+      }
+    }
+  }
+}
+
+.middle-buttons {
+  background-color: #eee;
+  border: 5px inset #fff;
+  border-radius: 5px;
+  height: 45px;
+  left: 193px;
+  position: absolute;
+  top: 150px;
+  width: 175px;
+
+  .middle-button {
+    background-color: #202020;
+    border-radius: 10px;
+    box-shadow: 2px 2px #888;
+    cursor: pointer;
+    font-size: 15px;
+    height: 20px;
+    position: absolute;
+    width: 50px;
+  }
+
+  .select-button {
+    left: 25px;
+    top: 7px;
+
+    &:before {
+      color: $red;
+      content: 'SELECT';
+      left: -5px;
+      position: absolute;
+      top: -46px;
+    }
+
+    &:active,
+    &.button-is-pressed {
+      box-shadow: 0 0 #000;
+      left: 27px;
+      top: 10px;
+
+      &:before {
+        color: $red;
+        content: 'SELECT';
+        left: -7px;
+        position: absolute;
+        top: -49px;
+      }
+    }
+  }
+
+  .start-button {
+    left: 95px;
+    top: 7px;
+
+    &:before {
+      color: $red;
+      content: 'START';
+      position: absolute;
+      top: -46px;
+    }
+
+    &:active,
+    &.button-is-pressed {
+      box-shadow: 0 0 #000;
+      left: 97px;
+      top: 10px;
+
+      &:before {
+        color: $red;
+        content: 'START';
+        left: -2px;
+        position: absolute;
+        top: -49px;
+      }
+    }
+  }
+}
+
+.d-pad {
+  height: 100px;
+  left: 65px;
+  position: absolute;
+  top: 110px;
+  width: 100px;
+
+  .d-pad-button {
+    background-color: #000;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #444;
+    cursor: pointer;
+    font-size: 28px;
+    height: 34px;
+    position: absolute;
+    text-align: center;
+    width: 34px;
+  }
+
+  .up-button {
+    box-shadow: -3px 0 0 #888;
+    left: 33px;
+    transform: rotate(180deg);
+
+    &:active,
+    &.button-is-pressed {
+      box-shadow: -1px 0 0 #888;
+      transform: rotate(180deg) rotate3d(1, 0, 0, 30deg);
+    }
+  }
+
+  .left-button {
+    box-shadow: 3px 0 0 #888;
+    top: 33px;
+    transform: rotate(90deg);
+
+    &:active,
+    &.button-is-pressed {
+      box-shadow: 1px 0 0 #888;
+      transform: rotate(90deg) rotate3d(1, 0, 0, 20deg);
+    }
+  }
+
+  .right-button {
+    box-shadow: -3px 3px 0 #888;
+    left: 66px;
+    top: 33px;
+    transform: rotate(270deg);
+
+    &:active,
+    &.button-is-pressed {
+      box-shadow: -1px 1px 0 #888;
+      transform: rotate(270deg) rotate3d(1, 0, 0, 20deg);
+    }
+  }
+
+  .down-button {
+    box-shadow: 3px 1px 0 #888;
+    left: 33px;
+    top: 66px;
+
+    &:active,
+    &.button-is-pressed {
+      box-shadow: 1px 0 0 #888;
+      transform: rotate3d(1, 0, 0, 30deg);
+    }
+  }
+
+  .middle-part {
+    background-color: #000;
+    height: 34px;
+    left: 33px;
+    position: absolute;
+    top: 33px;
+    width: 34px;
+
+    &:before {
+      // background-color: #ccc;
+      border-bottom: 1px solid #999;
+      border-radius: 50%;
+      border-right: 1px solid #999;
+      content: '';
+      height: 20px;
+      margin: 7px 0 0 7px;
+      position: absolute;
+      width: 20px;
+    }
+  }
+}
