@@ -103,6 +103,30 @@ export class Private extends React.PureComponent {
               ))
             }
           </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <div>
+            <iframe
+              title="Tetris"
+              allowFullScreen
+              frameBorder="0"
+              height="700"
+              src={'http://127.0.0.1:8080/?lan=en'}
+              width="700"
+            />
+          </div>
         </div>
       </div>
     );
