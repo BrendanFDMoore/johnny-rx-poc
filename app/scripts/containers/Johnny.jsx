@@ -7,7 +7,7 @@ import gamepadStoreConnector from 'selectors/gamepad';
 
 import { ledOn, ledOff, ledBlink, ledPulse } from 'actions';
 
-export class Private extends React.PureComponent {
+export class Johnny extends React.PureComponent {
   static propTypes = {
     gamepad: PropTypes.object,
     johnny: PropTypes.object.isRequired,
@@ -103,30 +103,6 @@ export class Private extends React.PureComponent {
               ))
             }
           </div>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <div>
-            <iframe
-              title="Tetris"
-              allowFullScreen
-              frameBorder="0"
-              height="700"
-              src={'http://127.0.0.1:8080/?lan=en'}
-              width="700"
-            />
-          </div>
         </div>
       </div>
     );
@@ -150,4 +126,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Private);
+export default connect(mapStateToProps, mapDispatchToProps)(Johnny);

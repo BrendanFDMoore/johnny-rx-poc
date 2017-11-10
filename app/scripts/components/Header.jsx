@@ -35,20 +35,20 @@ const Header = ({ dispatch, user }) =>
         </li>
         <li>
           <NavLink
-            to="/private"
-            className="app__header__link"
-            activeClassName="is-active"
-          >
-            Private
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
             to="/johnny"
             className="app__header__link"
             activeClassName="is-active"
           >
-            Johnny
+            Demo #2
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/shooty"
+            className="app__header__link"
+            activeClassName="is-active"
+          >
+            Demo #4
           </NavLink>
         </li>
         <li>

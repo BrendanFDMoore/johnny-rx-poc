@@ -10,6 +10,7 @@ import Home from 'containers/Home';
 import Private from 'containers/Private';
 import Login from 'containers/Login';
 import Johnny from 'containers/Johnny';
+import Shooty from 'containers/Shooty';
 import NotFound from 'containers/NotFound';
 
 import Loader from 'components/Loader';
@@ -63,6 +64,12 @@ export class App extends React.Component {
                   component={Johnny}
                   isAuthenticated={user.isAuthenticated}
                   path="/johnny"
+                  exact
+                />
+                <RedirectPublic
+                  component={Shooty}
+                  isAuthenticated={user.isAuthenticated}
+                  path="/shooty"
                   exact
                 />
                 <Route component={NotFound} />

@@ -142,6 +142,7 @@
   },
   "scripts": {
     "start": "concurrently --kill-others \"yarn start:socketserver\" \"yarn start:app\" \"yarn start:johnnyfive\"",
+    "start:shooty": "concurrently --kill-others \"yarn start:socketserver\" \"yarn start:app\"",
     "start:app": "node config/webpack.server.js",
     "start:johnnyfive": "node johnny-five/start.js",
     "start:socketserver": "node socket/start.js",

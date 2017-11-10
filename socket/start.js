@@ -19,6 +19,10 @@ io.on('connection', (socket) => {
     logger('received johnny event: ' + msg);
     io.emit('johnny event', msg);
   });
+  socket.on('shooty event', (msg) => {
+    logger('received shooty event: ' + msg);
+    io.emit('shooty event', msg);
+  });
 
   // Listen for commands from app to send to board
   socket.on('johnny command', (msg) => {

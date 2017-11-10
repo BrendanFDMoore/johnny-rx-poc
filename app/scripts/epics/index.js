@@ -15,6 +15,10 @@ import {
   ledPulseCommands
 } from './johnny';
 
+import {
+  shootyInitListener
+} from './shooty';
+
 export default combineEpics(
   userLogin,
   userLogout,
@@ -24,5 +28,6 @@ export default combineEpics(
   ledOnCommands,
   ledOffCommands,
   ledBlinkCommands,
-  ledPulseCommands
+  ledPulseCommands,
+  shootyInitListener
 );

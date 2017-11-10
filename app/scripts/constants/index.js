@@ -33,6 +33,14 @@ export const ActionTypes: Object = keyMirror({
   JOHNNY_FIVE_LED_OFF: undefined,
   JOHNNY_FIVE_LED_BLINK: undefined,
   JOHNNY_FIVE_LED_PULSE: undefined,
+  SHOOTY_LASERS_START_GAME: undefined,
+  SHOOTY_LASERS_STOP_GAME: undefined,
+  SHOOTY_LASERS_RED_TARGET: undefined,
+  SHOOTY_LASERS_RED_HIT: undefined,
+  SHOOTY_LASERS_RED_MISS: undefined,
+  SHOOTY_LASERS_GREEN_TARGET: undefined,
+  SHOOTY_LASERS_GREEN_HIT: undefined,
+  SHOOTY_LASERS_GREEN_MISS: undefined,
 });
 
 /**
